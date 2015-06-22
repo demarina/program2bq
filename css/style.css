@@ -1,0 +1,60 @@
+.row div{
+	margin-top: 25px;
+}
+
+input{
+	height: 50px;
+	border: none;
+	border-bottom: 3px solid #AAA;
+}
+
+input:focus{
+	border-bottom: 4px solid rgb(61,201,179);
+	outline: none;
+}
+
+
+label{
+	transition: 1s;
+	position: absolute;
+	left: 17px;
+	bottom: 12px;
+}
+
+.active label{
+	-webkit-transform: translateY(-25px) rotate(-360deg);
+	-moz-transform: translateY(-25px) rotate(-360deg);
+	transform: translateY(-25px) rotate(-360deg);
+	transition: 1s;
+	color: rgb(61,201,179);
+}
+
+.active input{
+	border-bottom: 4px solid rgb(61,201,179);
+}
+
+#entrar{
+	margin-top: 25px;
+	transition: 0.3s;
+	height: 30px;
+	width: 150px;
+	background-color: rgb(61,201,179);
+	color: #FFF;
+	border-radius: 10px;
+}
+
+#entrar:hover{
+	transition: 0.7s;
+	background-color: #FFF;
+	color: rgb(61,201,179);
+	border: 2px solid rgb(61,201,179);
+}
+
+#entrar:active{
+	transition: 0s;
+	font-size: 11px;
+}
+
+#entrar:focus{
+	outline: none;
+}
