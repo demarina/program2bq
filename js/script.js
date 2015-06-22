@@ -11,38 +11,41 @@ $(document).ready(function(){
 		var mail = $("#mail").val();
 		var ident = $("#ident").val();
 
+
 		if((name == "") || (mail == "") || (ident == ""))
 			alert("Rellene todos los campos por favor");
 		else{
-			$.ajax({
+			if(mail.includes("@") && mail.includes(".")){
+				$.ajax({
 
-				beforeSend: function(){
-					console.log("ENTRO");
-				},
+					beforeSend: function(){
 
-				url: "php/mail.php",
-				type: "POST",
+					},
 
-				data: {
-					"name": name,
-					"mail": mail,
-					"ident": ident,
-				},
+					url: "php/mail.php",
+					type: "POST",
 
-			    success: function(data) {
+					data: {
+						"name": name,
+						"mail": mail,
+						"ident": ident,
+					},
 
+				    success: function(data) {
+				    	$("#result").html(data);
+				    },
 
-			    },
+				    error: function(jqXHR,estado,error) {
+				    	console.log(estado);
+				    	console.log(error);
+				    },
 
-			    error: function(jqXHR,estado,error) {
-			    	console.log(estado);
-			    	console.log(error);
-			    },
-
-			    complete: function(jqXHR,estado) {
-			    	console.log(estado);
-			    },
-			});
+				    complete: function(jqXHR,estado) {
+				    	console.log(estado);
+				    },
+				});
+			}else
+				alert("El email introducido no es correcto");
 		}
 	});
 });
