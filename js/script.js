@@ -11,7 +11,6 @@ $(document).ready(function(){
 		var mail = $("#mail").val();
 		var ident = $("#ident").val();
 
-
 		if((name == "") || (mail == "") || (ident == ""))
 			alert("Rellene todos los campos por favor");
 		else{
@@ -32,7 +31,8 @@ $(document).ready(function(){
 					},
 
 				    success: function(data) {
-				    	$("#result").html(data);
+				    	$(location).attr("href", 
+				    				"http://localhost:8080/rest-restful/rest/"+name);
 				    },
 
 				    error: function(jqXHR,estado,error) {

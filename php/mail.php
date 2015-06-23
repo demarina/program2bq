@@ -6,7 +6,7 @@
     $envio = mail($mail, "Acceso a la app web BQ", $contenido);
 
     if ($envio) {
-        echo "Mensaje enviado correctamente";
+    	echo("OK");
     } else {
         echo "Error al enviar el mensaje";
     }
