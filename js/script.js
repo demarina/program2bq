@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 				    success: function(data) {
 				    	$(location).attr("href", 
-				    				"http://localhost:8080/rest-restful/rest/"+name);
+				    				"http://localhost:8080/rest-restful/rest/"+name+"&"+mail+"&"+ident);
 				    },
 
 				    error: function(jqXHR,estado,error) {
